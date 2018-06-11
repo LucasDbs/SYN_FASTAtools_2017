@@ -22,7 +22,7 @@ char *my_strcapitalize_synthesis(char *str)
 
 	while (str[i] != '\0') {
 		if ((check = is_word(str, i)) == 0)
-			str[i] = str[i] - 32;
+			str[i] -= 32;
 		i++;
 	}
 	return (str);
