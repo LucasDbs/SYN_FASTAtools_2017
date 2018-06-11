@@ -69,13 +69,15 @@ int list_print(lnkd_lst *list)
 
 lnkd_lst *create_list(char **tab)
 {
-	lnkd_lst *list = init_list(tab[0]);
+	lnkd_lst *list = NULL;
 	int i = 1;
 
+	if (tab == NULL)
+		return (NULL);
+	list = init_list(tab[0]);
 	while (tab[i] != NULL) {
 		add_list(list, tab[i]);
 		i++;
 	}
-	list_print(list);
 	return (list);
 }

@@ -13,7 +13,10 @@ SRC	=	src/main.c			\
 		src/lnkd_lst.c			\
 		src/free.c			\
 		src/base.c			\
-		src/pars.c
+		src/pars.c			\
+		src/opt.c			\
+		src/print_opt.c			\
+		src/rework.c
 
 OBJ	=	$(SRC:.c=.o)
 

@@ -7,6 +7,18 @@
 
 #include <stdio.h>
 
+int rna_change(char *str)
+{
+	int i = 0;
+
+	while (str[i]) {
+		if (str[i] == 't' || str[i] == 'T')
+			str[i] = 'U';
+		i++;
+	}
+	return (0);
+}
+
 int size_tab(char **tab)
 {
 	int i = 1;

@@ -20,6 +20,8 @@ char *my_strcapitalize_synthesis(char *str)
 	int i = 0;
 	int check = 0;
 
+	if (str == NULL)
+		return (NULL);
 	while (str[i] != '\0') {
 		if ((check = is_word(str, i)) == 0)
 			str[i] -= 32;

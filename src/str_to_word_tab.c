@@ -13,6 +13,8 @@ static int start(char const *str, char c)
 {
 	int i = 0;
 
+	if (str == NULL)
+		return (0);
 	while (str[i] == c)
 		i++;
 	return (i);
@@ -23,6 +25,8 @@ static int check_size(char const *str, char c)
 	int nb = 0;
 	int i = 0;
 
+	if (str == NULL)
+		return (0);
 	while (str[i] != '\0') {
 		if (str[i] == c && (i == 0 || str[i - 1] != c))
 			nb++;
@@ -56,7 +60,7 @@ char **str_to_word_tab(char const *str, char s)
 	int c = start(str, s);
 	int a = 0;
 
-	if (array == NULL)
+	if (array == NULL || str == NULL)
 		return (NULL);
 	for (int i = 0, cnt = 0; i != size; i++)
 		array[i] = malloc(sizeof(char) * (length(str, &cnt, s) + 1));
