@@ -29,7 +29,7 @@ char *rework_seq(char *str)
 	int a = 0;
 
 	while (str[i] != '\0') {
-		if (str[i] == 't' || str[i] == 'T' 
+		if (str[i] == 't' || str[i] == 'T'
 			|| str[i] == 'a' || str[i] == 'A'
 			|| str[i] == 'g' || str[i] == 'G'
 			|| str[i] == 'c' || str[i] == 'C'

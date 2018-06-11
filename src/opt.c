@@ -25,13 +25,14 @@ ptr_s *init_ptr(void)
 	new[0] = init_struct("1", &opt_one);
 	new[1] = init_struct("2", &opt_two);
 	new[2] = init_struct("3", &opt_three);
+	return (new);
+}
+
 //	new[3] = init_struct("4", &opt_four);
 //	new[4] = init_struct("5", &opt_five);
 //	new[5] = init_struct("6", &opt_six);
 //	new[6] = init_struct("7", &opt_seven);
 //	new[7] = init_struct("-h", &opt_h);
-	return (new);
-}
 
 int fnd_opt(lnkd_lst *list, char **av)
 {
