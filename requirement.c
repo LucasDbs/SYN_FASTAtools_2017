@@ -5,11 +5,15 @@
 ** requirement
 */
 
+#include <stdio.h>
+
 int is_word(char *str, int i)
 {
 	if ((str[i] >= 'a' && str[i] <= 'z')
 		&& ((str[i - 1] >= 32 && str[i - 1] <= 47)
-		|| (str[i - 1] >= 58 && str[i - 1] <= 64) || i == 0))
+		|| (str[i - 1] >= 58 && str[i - 1] <= 64)
+		|| (str[i - 1] >= 91 && str[i - 1] <= 96) 
+		|| (str[i - 1] >= 123 && str[i - 1] <= 127) || i == 0))
 		return (0);
 	else
 		return (1);

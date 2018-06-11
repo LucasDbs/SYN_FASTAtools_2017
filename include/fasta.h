@@ -30,7 +30,9 @@ int pars_command(int, char **);
 int check_opt(char **);
 int opt_one(lnkd_lst *);
 int opt_two(lnkd_lst *);
+int opt_three(lnkd_lst *);
 int rework_list(lnkd_lst *);
 int rna_change(char *);
+char *rev_seq(char *);
 
 #endif
