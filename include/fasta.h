@@ -38,8 +38,9 @@ char *rev_seq(char *);
 char **tab_four(char *, int);
 int str_compare(void const *, void const *);
 int size_of_array(char **);
-int opt_four_print(char **);
+int opt_four_print(char **, char ***);
 char *revstr(char *);
 int check_tab(char *, char **);
+int free_list(lnkd_lst *);
 
 #endif

@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2018
 ** Lucas Duboisse
 ** File description:
-** str_to_word_array
+** Free functions
 */
 
 #include <stdlib.h>
