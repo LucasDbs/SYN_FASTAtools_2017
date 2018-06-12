@@ -25,9 +25,11 @@ char *revstr(char *str)
 
 char *rev_seq(char *str)
 {
-	str = revstr(str);
 	int i = 0;
 
+	if (str == NULL)
+		return (NULL);
+	str = revstr(str);
 	while (str[i]) {
 		if (str[i] == 'T')
 			str[i++] = 'A';
@@ -46,6 +48,8 @@ int rna_change(char *str)
 {
 	int i = 0;
 
+	if (str == NULL)
+		return (84);
 	while (str[i]) {
 		if (str[i] == 't' || str[i] == 'T')
 			str[i] = 'U';

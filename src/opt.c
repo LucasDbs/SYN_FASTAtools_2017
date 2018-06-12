@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include "fasta.h"
 
-ptr_s init_struct(char *c, int (*ptr)(lnkd_lst *))
+ptr_s init_struct(char *c, int (*ptr)(lnkd_lst *, char *))
 {
 	ptr_s new;
 
@@ -27,7 +27,6 @@ ptr_s *init_ptr(void)
 	new[2] = init_struct("3", &opt_three);
 	return (new);
 }
-
 //	new[3] = init_struct("4", &opt_four);
 //	new[4] = init_struct("5", &opt_five);
 //	new[5] = init_struct("6", &opt_six);
@@ -41,7 +40,7 @@ int fnd_opt(lnkd_lst *list, char **av)
 
 	while (a != 3) {
 		if (strcmp(av[1], check[a].opt) == 0)
-			return (check[a].ptr(list));
+			return (check[a].ptr(list, av[2]));
 		a++;
 	}
 	free(check);

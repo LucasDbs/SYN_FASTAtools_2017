@@ -18,7 +18,7 @@ typedef struct lnkd_lst
 typedef struct ptr_s
 {
 	char *opt;
-	int (*ptr)(lnkd_lst *);
+	int (*ptr)(lnkd_lst *, char *);
 } ptr_s;
 
 char *get_file(void);
@@ -28,11 +28,13 @@ lnkd_lst *create_list(char **);
 int size_tab(char **);
 int pars_command(int, char **);
 int check_opt(char **);
-int opt_one(lnkd_lst *);
-int opt_two(lnkd_lst *);
-int opt_three(lnkd_lst *);
+int opt_one(lnkd_lst *, char *);
+int opt_two(lnkd_lst *, char *);
+int opt_three(lnkd_lst *, char *);
+int opt_four(lnkd_lst *, char *);
 int rework_list(lnkd_lst *);
 int rna_change(char *);
 char *rev_seq(char *);
+char **tab_four(char *, int);
 
 #endif

@@ -16,7 +16,8 @@ SRC	=	src/main.c			\
 		src/pars.c			\
 		src/opt.c			\
 		src/print_opt.c			\
-		src/rework.c
+		src/rework.c			\
+		src/tab.c
 
 OBJ	=	$(SRC:.c=.o)
 
