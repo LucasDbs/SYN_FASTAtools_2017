@@ -38,7 +38,7 @@ int special_param(char **av)
 
 int pars_command(int ac, char **av)
 {
-	if (ac > 3)
+	if (ac > 3 || ac <= 1)
 		return (1);
 	else if (strcmp("-h", av[1]) == 0 && av[2] == NULL)
 		return (0);

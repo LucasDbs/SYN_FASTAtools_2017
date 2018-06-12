@@ -8,38 +8,34 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include "fasta.h"
 
-char *revstr(char *str)
+int check_letter(char *act, char *res, char *c)
 {
-	int i = strlen(str);
-	char *new = malloc(sizeof(char) * (i + 1));
-	int a = 0;
+	int i = 0;
 
-	i--;
-	while (i >= 0)
-		new[a++] = str[i--];
-	new[a] = '\0';
-	free(str);
-	return (new);
+	while (act[i] != '\0') {
+		if (*c == act[i]) {
+			*c = res[i];
+			return (0);
+		}
+		i++;
+	}
+	return (0);
 }
 
 char *rev_seq(char *str)
 {
 	int i = 0;
+	char *act = "TGACN";
+	char *res = "ACTGN";
 
 	if (str == NULL)
 		return (NULL);
 	str = revstr(str);
 	while (str[i]) {
-		if (str[i] == 'T')
-			str[i++] = 'A';
-		else if (str[i] == 'G')
-			str[i++] = 'C';
-		i = i;
-		if (str[i] == 'A')
-			str[i++] = 'T';
-		else if (str[i] == 'C')
-			str[i++] = 'G';
+		check_letter(act, res, &str[i]);
+		i++;
 	}
 	return (str);
 }
@@ -73,4 +69,16 @@ int size_tab(char **tab)
 		i++;
 	}
 	return (nb);
+}
+
+int check_tab(char *str, char **tmp)
+{
+	int i = 0;
+
+	while (tmp[i] != NULL) {
+		if (strcmp(tmp[i], str) == 0)
+			return (1);
+		i++;
+	}
+	return (0);
 }

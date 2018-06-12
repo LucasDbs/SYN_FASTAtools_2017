@@ -20,14 +20,14 @@ ptr_s init_struct(char *c, int (*ptr)(lnkd_lst *, char *))
 
 ptr_s *init_ptr(void)
 {
-	ptr_s *new = malloc(sizeof(ptr_s) * 3);
+	ptr_s *new = malloc(sizeof(ptr_s) * 4);
 
 	new[0] = init_struct("1", &opt_one);
 	new[1] = init_struct("2", &opt_two);
 	new[2] = init_struct("3", &opt_three);
+	new[3] = init_struct("4", &opt_four);
 	return (new);
 }
-//	new[3] = init_struct("4", &opt_four);
 //	new[4] = init_struct("5", &opt_five);
 //	new[5] = init_struct("6", &opt_six);
 //	new[6] = init_struct("7", &opt_seven);
@@ -38,7 +38,7 @@ int fnd_opt(lnkd_lst *list, char **av)
 	ptr_s *check = init_ptr();
 	int a = 0;
 
-	while (a != 3) {
+	while (a != 4) {
 		if (strcmp(av[1], check[a].opt) == 0)
 			return (check[a].ptr(list, av[2]));
 		a++;

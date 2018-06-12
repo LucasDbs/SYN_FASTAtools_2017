@@ -55,19 +55,20 @@ int opt_three(lnkd_lst *list, char *s)
 	}
 	return (0);
 }
-/*
+
 int opt_four(lnkd_lst *list, char *s)
 {
 	lnkd_lst *tmp = list;
 	int size = atoi(s);
 	char **tab = NULL;
 
-	printf("size = %d\n", size);
 	while (tmp != NULL) {
-		if (tmp->name != NULL)
-			printf(">%s\n", tmp->name);
-		tab = tab_four(tmp->seq, size);
+		if (tmp->seq != NULL) {
+			tab = tab_four(tmp->seq, size);
+			opt_four_print(tab);
+		}
 		tmp = tmp->next;
+		free_tab(tab);
 	}
 	return (0);
-}*/
+}
