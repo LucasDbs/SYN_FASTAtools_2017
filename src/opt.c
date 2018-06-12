@@ -28,6 +28,7 @@ ptr_s *init_ptr(void)
 	new[3] = init_struct("4", &opt_four);
 	return (new);
 }
+
 //	new[4] = init_struct("5", &opt_five);
 //	new[5] = init_struct("6", &opt_six);
 //	new[6] = init_struct("7", &opt_seven);
@@ -39,8 +40,11 @@ int fnd_opt(lnkd_lst *list, char **av)
 	int a = 0;
 
 	while (a != 4) {
-		if (strcmp(av[1], check[a].opt) == 0)
-			return (check[a].ptr(list, av[2]));
+		if (strcmp(av[1], check[a].opt) == 0) {
+			check[a].ptr(list, av[2]);
+			free(check);
+			return (0);
+		}
 		a++;
 	}
 	free(check);
@@ -61,5 +65,6 @@ int check_opt(char **av)
 	}
 	free(file);
 	free_tab(tab);
+	free_list(list);
 	return (0);
 }

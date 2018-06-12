@@ -24,18 +24,25 @@ char *revstr(char *str)
 	return (new);
 }
 
-int opt_four_print(char **tab)
+int save_it(char **tmp, char *str)
 {
-	char **tmp = malloc(sizeof(char *) * (size_of_array(tab) + 1));
 	int i = 0;
-	int a = 0;
 
-	tmp[0] = NULL;
+	while (tmp[i] != NULL)
+		i++;
+	tmp[i++] = strdup(str);
+	tmp[i] = NULL;
+	return (0);
+}
+
+int opt_four_print(char **tab, char ***tmp)
+{
+	int i = 0;
+
 	while (tab[i] != NULL) {
-		if (check_tab(tab[i], tmp) == 0) {
+		if (check_tab(tab[i], *tmp) == 0) {
 			printf("%s\n", tab[i]);
-			tmp[a++] = strdup(tab[i]);
-			tmp[a] = NULL;
+			save_it((*tmp), tab[i]);
 		}
 		i++;
 	}

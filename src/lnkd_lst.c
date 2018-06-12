@@ -55,18 +55,6 @@ int add_list(lnkd_lst *list, char *str)
 	return (0);
 }
 
-int list_print(lnkd_lst *list)
-{
-	lnkd_lst *tmp = list;
-
-	while (tmp != NULL) {
-		printf("list->name = %s\n", tmp->name);
-		printf("list->seq = %s\n", tmp->seq);
-		tmp = tmp->next;
-	}
-	return (0);
-}
-
 lnkd_lst *create_list(char **tab)
 {
 	lnkd_lst *list = NULL;

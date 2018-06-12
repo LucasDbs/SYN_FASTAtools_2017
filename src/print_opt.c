@@ -61,14 +61,17 @@ int opt_four(lnkd_lst *list, char *s)
 	lnkd_lst *tmp = list;
 	int size = atoi(s);
 	char **tab = NULL;
+	char **save = malloc(sizeof(char *) * 1000);
 
+	save[0] = NULL;
 	while (tmp != NULL) {
 		if (tmp->seq != NULL) {
 			tab = tab_four(tmp->seq, size);
-			opt_four_print(tab);
+			opt_four_print(tab, &save);
 		}
 		tmp = tmp->next;
 		free_tab(tab);
 	}
+	free_tab(save);
 	return (0);
 }
