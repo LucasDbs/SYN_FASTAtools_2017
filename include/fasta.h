@@ -36,5 +36,10 @@ int rework_list(lnkd_lst *);
 int rna_change(char *);
 char *rev_seq(char *);
 char **tab_four(char *, int);
+int str_compare(void const *, void const *);
+int size_of_array(char **);
+int opt_four_print(char **);
+char *revstr(char *);
+int check_tab(char *, char **);
 
 #endif
